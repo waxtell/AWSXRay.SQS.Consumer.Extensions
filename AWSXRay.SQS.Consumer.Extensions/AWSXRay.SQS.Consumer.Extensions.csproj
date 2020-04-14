@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+    <Authors>Will Axtell</Authors>
+    <Description>Ease of use extension methods for continuing an XRay trace from an incoming SQS message</Description>
+    <PackageTags>SQS XRay</PackageTags>
+    <RepositoryUrl>https://github.com/waxtell/AWSXRay.SQS.Consumer.Extensions.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/waxtell/AWSXRay.SQS.Consumer.Extensions</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.SQS" Version="3.3.102.91" />
+    <PackageReference Include="AWSXRayRecorder.Core" Version="2.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Metadata\" />
+  </ItemGroup>
+
+</Project>
