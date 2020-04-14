@@ -8,6 +8,8 @@
     <RepositoryUrl>https://github.com/waxtell/AWSXRay.SQS.Consumer.Extensions.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/waxtell/AWSXRay.SQS.Consumer.Extensions</PackageProjectUrl>
+    <PackageReleaseNotes>1.0.0-  Initial release</PackageReleaseNotes>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
