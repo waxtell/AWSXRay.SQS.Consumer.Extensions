@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
@@ -8,12 +8,13 @@
     <RepositoryUrl>https://github.com/waxtell/AWSXRay.SQS.Consumer.Extensions.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/waxtell/AWSXRay.SQS.Consumer.Extensions</PackageProjectUrl>
-    <PackageReleaseNotes>1.0.0-  Initial release</PackageReleaseNotes>
-    <Version>1.0.0</Version>
+    <PackageReleaseNotes>1.0.1- Downgrade AWSSDK.Core to avoid https://github.com/aws/aws-sdk-net/issues/1540
+1.0.0-  Initial release</PackageReleaseNotes>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.SQS" Version="3.3.102.91" />
+    <PackageReference Include="AWSSDK.SQS" Version="3.3.102.23" />
     <PackageReference Include="AWSXRayRecorder.Core" Version="2.6.2" />
   </ItemGroup>
 
