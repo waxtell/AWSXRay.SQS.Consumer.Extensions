@@ -9,26 +9,31 @@ namespace AWSXRay.SQS.Consumer.Extensions
     {
         public static void ContinueFrom(this AWSXRayRecorder recorder, string serviceName, Message message)
         {
-            var traceHeader = message?.GetTraceHeader() ?? new TraceHeader();
+            var traceHeader = message?.GetTraceHeader() ?? new TraceHeader
+            {
+                RootTraceId = TraceId.NewId(),
+                ParentId = null,
+                Sampled = SampleDecision.Unknown
+            };
 
             string ruleName = null;
             
             if (traceHeader.Sampled == SampleDecision.Unknown || traceHeader.Sampled == SampleDecision.Requested)
             {
                 var samplingInput = new SamplingInput(serviceName);
-                var sampleResponse = AWSXRayRecorder.Instance.SamplingStrategy.ShouldTrace(samplingInput);
+                var sampleResponse = recorder.SamplingStrategy.ShouldTrace(samplingInput);
                 traceHeader.Sampled = sampleResponse.SampleDecision;
                 ruleName = sampleResponse.RuleName;
             }
 
-            var samplingResponse = new SamplingResponse(ruleName, traceHeader.Sampled); 
+            var samplingResponse = new SamplingResponse(ruleName, traceHeader.Sampled);
 
             recorder
                 .BeginSegment
                 (
-                    serviceName,
-                    traceHeader.RootTraceId,
-                    traceHeader.ParentId,
+                    serviceName, 
+                    traceHeader.RootTraceId, 
+                    traceHeader.ParentId, 
                     samplingResponse
                 );
         }
