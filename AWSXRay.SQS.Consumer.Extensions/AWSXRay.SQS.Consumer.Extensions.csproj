@@ -1,21 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
     <Authors>Will Axtell</Authors>
     <Description>Ease of use extension methods for continuing an XRay trace from an incoming SQS message</Description>
     <PackageTags>SQS XRay</PackageTags>
     <RepositoryUrl>https://github.com/waxtell/AWSXRay.SQS.Consumer.Extensions.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/waxtell/AWSXRay.SQS.Consumer.Extensions</PackageProjectUrl>
-    <PackageReleaseNotes>1.0.1- Downgrade AWSSDK.Core to avoid https://github.com/aws/aws-sdk-net/issues/1540
-1.0.0-  Initial release</PackageReleaseNotes>
-    <Version>1.0.1</Version>
+    <PackageReleaseNotes>
+2.0.0- BREAKING!  Upgrade to AWS SDK 3.7.x track
+1.0.1- Downgrade AWSSDK.Core to avoid https://github.com/aws/aws-sdk-net/issues/1540
+1.0.0-  Initial release
+    </PackageReleaseNotes>
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.SQS" Version="3.3.102.23" />
-    <PackageReference Include="AWSXRayRecorder.Core" Version="2.6.2" />
+    <PackageReference Include="AWSSDK.SQS" Version="3.7.0.30" />
+    <PackageReference Include="AWSXRayRecorder.Core" Version="2.10.1" />
   </ItemGroup>
 
   <ItemGroup>
